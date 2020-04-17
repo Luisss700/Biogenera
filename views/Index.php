@@ -6,8 +6,9 @@
  <link href="../Assets/Bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
 </head>
 <body>
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
     <script src="../Assets/Bootstrap/js/bootstrap.min.js"></script> 
+	<script src="../Controller/indexController.js"></script> 
 	
 
     <div class="container">
