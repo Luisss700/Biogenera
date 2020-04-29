@@ -1,0 +1,8 @@
+﻿
+.botonBarra:hover{
+    background-color:yellow;
+    cursor: pointer;
+}
+.botonBarra{
+    color:blue !important;
+}
