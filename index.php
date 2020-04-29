@@ -13,23 +13,22 @@
     <script type ="text/javascript" src="CONTROLLER/indexController.js"></script>
 
     <nav class="navbar navbar-expand-md" style="background-color:white">
-        <div class="container-fluis">
-             <a class="navbar-brand mb-0 h1" href="Index.php" style="font-size:40px;padding-right:5em">
-                 <img src="ASSETS/Imagenes/biogenera_logo.jpg" width="50" height="50" class="d-inline-block align-top" alt="" />Biogenera
+        <div class="container">
+            <a class="navbar-brand mb-0 h1" href="Index.php" style="font-size:40px;padding-right:5em">
+                <img src="Assets/Imagenes/biogenera_logo.jpg" width="50" height="50" class="d-inline-block align-top" alt="" />Biogenera
             </a>
-             <div class="navbar-nav" style="font-size:20px">
-                 <a class="nav-item nav-link botonBarra" id="btnMiCuenta">
-                     Mi cuenta
-                     <span class="sr-only">(current)</span>
-                 </a>
-                 <a class="nav-item nav-link botonBarra">
-                     Mi equipo
-                     <span class="sr-only">(current)</span>
-                 </a>
+
+            <div class="navbar-nav" style="font-size:20px">
+                <a class="nav-item nav-link" id="btnMiCuenta">
+                    Mi cuenta
+                    <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-item nav-link" >
+                    Mi equipo
+                    <span class="sr-only">(current)</span>
+                </a>
             </div>
         </div>
-           
-        
     </nav>
 
     <?php
