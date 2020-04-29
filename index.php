@@ -19,11 +19,11 @@
             </a>
 
             <div class="navbar-nav" style="font-size:20px">
-                <a class="nav-item nav-link" id="btnMiCuenta">
+                <a class="nav-item nav-link botonBarra" id="btnMiCuenta">
                     Mi cuenta
                     <span class="sr-only">(current)</span>
                 </a>
-                <a class="nav-item nav-link" >
+                <a class="nav-item nav-link botonBarra" >
                     Mi equipo
                     <span class="sr-only">(current)</span>
                 </a>

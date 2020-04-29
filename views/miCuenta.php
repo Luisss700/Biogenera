@@ -4,6 +4,7 @@
         <title>Mi Cuenta</title> 
     </head> 
     <body>  
+        <script type ="text/javascript" src="./CONTROLLER/miCuentaController.js"></script>
 
         <div class="container py-4">
             <div class="row">
@@ -17,6 +18,17 @@
                 </div>
                 <div class="col-md-2"></div> 
             </div>
+
+           
+
+        </div>
+         <input class="forom-control" type="number" id="txtPrueba"  />
+
+            <button type="button" id="btnPrueba" class="btn btn-info">Info</button>
+        <br />
+        <br />
+        <div id="contenidoDinamico">
+            HOla
         </div>
     </body> 
 </html> 
