@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2020 at 08:01 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: May 22, 2020 at 08:37 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -146,7 +146,8 @@ CREATE TABLE `horariovoluntario` (
 
 CREATE TABLE `periodo` (
   `IDperiodo` int(11) NOT NULL,
-  `Nombre` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+  `Nombre` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Contrasena` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -168,22 +169,23 @@ CREATE TABLE `voluntario` (
   `Automovil` tinyint(1) NOT NULL,
   `Correo` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Contrasena` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Sexo` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+  `Sexo` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Universidad` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `voluntario`
 --
 
-INSERT INTO `voluntario` (`IDvoluntario`, `Nombre`, `Apellidos`, `IDperiodo`, `Matricula`, `Activado`, `Semestre`, `FechaN`, `Celular`, `Automovil`, `Correo`, `Contrasena`, `Sexo`) VALUES
-(1, 'Luis', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', ''),
-(2, 'Luis', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', ''),
-(3, 'Enrique', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', ''),
-(4, 'Enrique', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', ''),
-(5, 'Sanchez', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', ''),
-(6, 'Sanchez', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', ''),
-(7, 'Solo', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', ''),
-(8, 'Solo', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '');
+INSERT INTO `voluntario` (`IDvoluntario`, `Nombre`, `Apellidos`, `IDperiodo`, `Matricula`, `Activado`, `Semestre`, `FechaN`, `Celular`, `Automovil`, `Correo`, `Contrasena`, `Sexo`, `Universidad`) VALUES
+(1, 'Luis', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
+(2, 'Luis', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
+(3, 'Enrique', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
+(4, 'Enrique', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
+(5, 'Sanchez', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
+(6, 'Sanchez', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
+(7, 'Solo', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
+(8, 'Solo', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', '');
 
 --
 -- Indexes for dumped tables
