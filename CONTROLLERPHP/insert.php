@@ -1,5 +1,6 @@
 <?php
 
+class Insert{
 
 function insertar($tabla,$columnas,$valores){
 
@@ -29,4 +30,6 @@ require('conexion.php');
  mysqli_query($conexion,$sql) or die ("Fallo en la consulta");
 }
 
+
+}
 ?>

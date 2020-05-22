@@ -9,6 +9,11 @@ $("document").ready(function () {
         postForm('index.php', { ruta: 'registro' });
     });
 
+    $("#btnCerrarSesion").click(function () {
+        postForm('index.php', { cerrarSesion: 'cerrarSesion' });
+    });
+
+
 
 
 

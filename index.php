@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html  LANG="es">
 <head>
 <link href="ASSETS/Bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
 <meta charset="utf-8"/>
@@ -15,35 +15,83 @@
 
     <?php 
         session_start();
-        if (isset($_SESSION['sesion_iniciada'])) {
-           if ($_SESSION['sesion_iniciada']==1){ ?>
+        var_dump($_POST);
+        if(isset($_POST['cerrarSesion'])){
 
+            session_destroy();
+            session_start();
+        }
+         if(isset($_POST['loginExito'])){
+
+            $_SESSION['sesionIniciada']=1;
+             $_SESSION['correo'] = $_POST['loginExito'];
             
-    <nav class="navbar navbar-expand-md" style="background-color:white">
-        <div class="container">
-            <a class="navbar-brand mb-0 h1" href="Index.php" style="font-size:40px;padding-right:5em">
-                <img src="Assets/Imagenes/biogenera_logo.jpg" width="50" height="50" class="d-inline-block align-top" alt="" />Biogenera
-            </a>
+        }
+        
+        if(isset($_POST['actionRegistro'])){
+            $valores = array();
+            $columnas = array("Nombre","Apellidos","Matricula","Semestre","FechaN","Celular","Automovil","Correo","Contrasena","Sexo");
+            $hash = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
+            $tabla = "voluntario";
+            if(isset($_POST['automovil'])){
+                $auto = 1;
+            }else{
+                $auto = 0;
+            }
+            array_push($valores, $_POST['nombre'], $_POST['apellidos'],$_POST['matricula'],$_POST['semestre'],$_POST['fechaN'],$_POST['celular'],$auto,$_POST['correo'],$hash,$_POST['sexo']);
+            require('CONTROLLERPHP/insert.php');
+            $Insert = new Insert;
+            $Insert->insertar($tabla,$columnas,$valores);
+            $_SESSION['sesionIniciada'] = 1;
+            $_SESSION['correo'] = $_POST['correo'];
+            
+            
+        }
 
-            <div class="navbar-nav" style="font-size:20px">
-                <a class="nav-item nav-link botonBarra" id="btnMiCuenta">
-                    Mi cuenta
-                    <span class="sr-only">(current)</span>
-                </a>
-                <a class="nav-item nav-link botonBarra" >
-                    Mi equipo
-                    <span class="sr-only">(current)</span>
-                </a>
-            </div>
-        </div>
-    </nav>
 
+
+        if (isset($_SESSION['sesionIniciada'])) {
+           if ($_SESSION['sesionIniciada']==1){ ?>
+
+<nav class="navbar navbar-expand-lg  info-color" style="background-color:white">
+    <a class="navbar-brand mb-0 h1" href="Index.php" style="font-size:40px;padding-right:5em">
+                <img src="Assets/Imagenes/biogenera_logo.jpg" width="50" height="50" class="d-inline-block align-top" alt="" />Biogenera</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+               <a class="nav-link waves-effect waves-light"  id="btnMiCuenta">Mi Cuenta <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-effect waves-light" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-effect waves-light" href="#">Pricing</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink"               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item waves-effect waves-light" href="#">Action</a>
+                    <a class="dropdown-item waves-effect waves-light" href="#">Another action</a>
+                    <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline">
+            <a  id="btnCerrarSesion" class="nav-link waves-effect waves-light" >Cerrar Sesion</a>
+        </form>
+    </div>
+</nav>
+       <br>
+<br>  
+   
     <?php
             }
         }
     ?>
     <?php
-    //var_dump($_POST);
     if(isset($_POST["ruta"])){
         if($_POST["ruta"]=="miCuenta"){
             require("VIEWS/miCuenta.php");
@@ -52,7 +100,12 @@
             require("VIEWS/registro.php");
          }
     }else{
+    if (isset($_SESSION['sesionIniciada'])){
+        require("VIEWS/miCuenta.php");
+    }else{
         require("VIEWS/login.php");
+    }
+       
     }
     ?>
 
