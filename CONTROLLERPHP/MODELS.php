@@ -5,4 +5,5 @@ if(isset($_POST["dato"])){
     echo "<h1> $h </h1>";
 }
 
+
 ?>

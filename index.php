@@ -3,15 +3,22 @@
 <html>
 <head>
 <link href="ASSETS/Bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <link href="ASSETS/CSS/indexCSS.css" rel="stylesheet" />
 </head>
-
 <body style="background-color:#6bcabe">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
     <script type ="text/javascript" src="ASSETS/Bootstrap/js/bootstrap.min.js"></script> 
     <script type ="text/javascript" src="CONTROLLER/indexController.js"></script>
 
+
+    <?php 
+        session_start();
+        if (isset($_SESSION['sesion_iniciada'])) {
+           if ($_SESSION['sesion_iniciada']==1){ ?>
+
+            
     <nav class="navbar navbar-expand-md" style="background-color:white">
         <div class="container">
             <a class="navbar-brand mb-0 h1" href="Index.php" style="font-size:40px;padding-right:5em">
@@ -32,10 +39,18 @@
     </nav>
 
     <?php
+            }
+        }
+    ?>
+    <?php
+    //var_dump($_POST);
     if(isset($_POST["ruta"])){
         if($_POST["ruta"]=="miCuenta"){
             require("VIEWS/miCuenta.php");
         }
+        if($_POST["ruta"]=="registro"){
+            require("VIEWS/registro.php");
+         }
     }else{
         require("VIEWS/login.php");
     }

@@ -3,7 +3,13 @@ $("document").ready(function () {
    
     $("#btnMiCuenta").click(function () {
         postForm('index.php', { ruta: 'miCuenta' });
-          });
+    });
+
+    $("#btnRegistroRuta").click(function () {
+        postForm('index.php', { ruta: 'registro' });
+    });
+
+
 
 
 
