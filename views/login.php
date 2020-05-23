@@ -13,20 +13,16 @@
           <div class="card-body">
             <h5 class="card-title text-center">Inicia Sesíon</h5>
             <form class="form-signin">
-              <div class="form-label-group">
-                <input type="email" id="txtCorreo" class="form-control" placeholder="Correo" required autofocus>
+              
+                <input type="email" id="txtCorreo" class="form-control" placeholder="Correo" required >
                 <label for="inputEmail">Correo Electronico</label>
-              </div>
-
-              <div class="form-label-group">
+              
+                <br>
+              
                 <input type="password" id="txtContrasena" class="form-control" placeholder="Contraseña" required>
                 <label for="inputPassword">Contraseña</label>
-              </div>
+             
 
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Remember password</label>
-              </div>
               <div class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" id="btnLogin" >Iniciar Sesión</div>
               <hr class="my-4">
                  </form>

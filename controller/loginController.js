@@ -1,5 +1,5 @@
 ﻿$("document").ready(function () {
-    
+    $('#txtCorreo').focus();
     $("#btnLogin").click(function () {
 
         var correo = $("#txtCorreo").val();
