@@ -21,7 +21,7 @@
 	<h4 class="card-title mt-2">Resgistro</h4>
 </header>
 <article class="card-body">
-<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
+<form id="formaRegistro" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
 	<div class="form-row">
 		<div class="col form-group">
 			<label>Nombre</label>   
@@ -40,7 +40,7 @@
 		<input type="text" class="form-control" name="celular" placeholder="" required>
         <br>
 		<label>Correo Electrónico</label>
-		<input type="email" class="form-control" name="correo" placeholder="" required>
+		<input type="email" id="txtCorreo" class="form-control" name="correo" placeholder="" required>
 		<small class="form-text text-muted">No compartiremos tu correo con nadie más.</small>
 	</div> <!-- form-group end.// -->
 	<div class="form-group">
