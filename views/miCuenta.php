@@ -146,49 +146,49 @@
         <tr>
             <th scope="row">2:30-3:00</th>
             <td><input class="form-check-input" type="checkbox" value="76" name="76"<?php if (@$_REQUEST["76"]==76) echo "checked"?>></td>
-            <td><input class="form-check-input" type="checkbox" value="77" name="77"></td>
-            <td><input class="form-check-input" type="checkbox" value=78 name="78"></td>
-            <td><input class="form-check-input" type="checkbox" value=79 name="79"></td>
-            <td><input class="form-check-input" type="checkbox" value=80 name="80"></td>
+            <td><input class="form-check-input" type="checkbox" value="77" name="77"<?php if (@$_REQUEST["77"]==77) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value=78 name="78"<?php if (@$_REQUEST["78"]==78) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value=79 name="79"<?php if (@$_REQUEST["79"]==79) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value=80 name="80"<?php if (@$_REQUEST["80"]==80) echo "checked"?>></td>
         </tr>
         <tr>
             <th scope="row">3:00-3:30</th>
-            <td><input class="form-check-input" type="checkbox" value="81" name="81"></td>
-            <td><input class="form-check-input" type="checkbox" value=82 name="82"></td>
-            <td><input class="form-check-input" type="checkbox" value=83 name="83"></td>
-            <td><input class="form-check-input" type="checkbox" value=84 name="84"></td>
-            <td><input class="form-check-input" type="checkbox" value="85" name="85"></td>
+            <td><input class="form-check-input" type="checkbox" value="81" name="81"<?php if (@$_REQUEST["81"]==81) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value=82 name="82"<?php if (@$_REQUEST["82"]==82) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value=83 name="83"<?php if (@$_REQUEST["83"]==83) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value=84 name="84"<?php if (@$_REQUEST["84"]==84) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="85" name="85"<?php if (@$_REQUEST["85"]==85) echo "checked"?>></td>
         </tr>
         <tr>
             <th scope="row">3:30-4:00</th>
-            <td><input class="form-check-input" type="checkbox" value="86" name="86"></td>
-            <td><input class="form-check-input" type="checkbox" value="87" name="87"></td>
-            <td><input class="form-check-input" type="checkbox" value="88" name="88"></td>
-            <td><input class="form-check-input" type="checkbox" value="89" name="89"></td>
-            <td><input class="form-check-input" type="checkbox" value="90" name="90"></td>
+            <td><input class="form-check-input" type="checkbox" value="86" name="86"<?php if (@$_REQUEST["86"]==86) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="87" name="87"<?php if (@$_REQUEST["87"]==87) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="88" name="88"<?php if (@$_REQUEST["88"]==88) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="89" name="89"<?php if (@$_REQUEST["89"]==89) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="90" name="90"<?php if (@$_REQUEST["90"]==90) echo "checked"?>></td>
         </tr>
         <tr>
             <th scope="row">4:00-4:30</th>
-            <td><input class="form-check-input" type="checkbox" value="91" name="91"></td>
-            <td><input class="form-check-input" type="checkbox" value="92" name="92"></td>
-            <td><input class="form-check-input" type="checkbox" value="93" name="93"></td>
-            <td><input class="form-check-input" type="checkbox" value="94" name="94"></td>
-            <td><input class="form-check-input" type="checkbox" value="95" name="95"></td>
+            <td><input class="form-check-input" type="checkbox" value="91" name="91"<?php if (@$_REQUEST["91"]==91) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="92" name="92"<?php if (@$_REQUEST["92"]==92) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="93" name="93"<?php if (@$_REQUEST["93"]==93) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="94" name="94"<?php if (@$_REQUEST["94"]==94) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="95" name="95"<?php if (@$_REQUEST["95"]==95) echo "checked"?>></td>
         </tr>
         <tr>
             <th scope="row">4:30-5:00</th>
-            <td><input class="form-check-input" type="checkbox" value="96" name="96"></td>
-            <td><input class="form-check-input" type="checkbox" value="97" name="97"></td>
-            <td><input class="form-check-input" type="checkbox" value="98" name="98"></td>
-            <td><input class="form-check-input" type="checkbox" value="99" name="98"></td>
-            <td><input class="form-check-input" type="checkbox" value="100" name="100"></td>
+            <td><input class="form-check-input" type="checkbox" value="96" name="96"<?php if (@$_REQUEST["96"]==96) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="97" name="97"<?php if (@$_REQUEST["97"]==97) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="98" name="98"<?php if (@$_REQUEST["98"]==98) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="99" name="98"<?php if (@$_REQUEST["99"]==99) echo "checked"?>></td>
+            <td><input class="form-check-input" type="checkbox" value="100" name="100"<?php if (@$_REQUEST["100"]==100) echo "checked"?>></td>
         </tr>
       </tbody>
 
     </table>
     </div>
     <button type="submit" class="btn btn-primary" name="registroHorario">Register</button>
-    <input type="hnameden" name="ruta" value="miCuenta">
+    <input type="hidden" name="ruta" value="miCuenta">
 </div>
 </form>
 
