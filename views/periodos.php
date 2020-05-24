@@ -11,8 +11,8 @@
     <br>
      <div class="container">
         <div class="row">
-            <div class="col-4" ></div>
-            <div class="col-4">
+            <div class="col-3" ></div>
+            <div class="col-6">
                 <h3> Agregar un periodo </h3>
                 <input type="text" class="form-control" id="txtNombrePeriodo" placeholder="Nombre del periodo">  </input>
                 <br>
@@ -23,12 +23,12 @@
                 <br>
 
                 <h5> Lista de periodos </h5>
-                <div id="divPeriodos" style="background-color:white">
+                <div id="divPeriodos" style='background-color:white'>
                
                 <div>
 
             </div>
-            <div class="col-4" ></div>
+            <div class="col-3" ></div>
         </div>
     </div>
     </body> 

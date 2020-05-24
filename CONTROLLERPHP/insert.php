@@ -66,7 +66,7 @@ if(isset($_POST['insertar'])){
             $columnas = json_decode($jsonCol, true);
             $valores = json_decode($jsonVal, true);
 
-            var_dump($valores);
+            //var_dump($valores);
 
             $Insert = new Insert;
             $Insert->insertar($tabla,$columnas,$valores);

@@ -1,5 +1,6 @@
 ﻿$("document").ready(function () {
 
+   
     llenarTablaPeriodos();
      
     function llenarTablaPeriodos() {
@@ -29,6 +30,8 @@
     $("#btnAgregarPeriodo").click(function () {
         agregarPeriodo();
     });
+
+
 
 
     function agregarPeriodo(){
@@ -74,5 +77,50 @@
         });
 
     }
+
+    var elements = document.getElementsByClassName("btnEliminarPeriodo");
+
+    var myFunction = function () {
+        var attribute = this.getAttribute("data-nombre");
+        alert(attribute);
+    };
+
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', myFunction, false);
+    }
+
+    function eliminarPeriodo(nombre) {
+
+        var parametros = {
+            "eliminar": "1",
+            "valor": nombre,
+            "columna": "Nombre",
+            "tabla": "periodo"
+        }
+
+        $.ajax({
+
+            data: parametros,
+            url: "./CONTROLLERPHP/delete.php",
+            type: "post",
+            success: function (data) {
+                //alert(data);             
+            },
+            error: function () {
+                alert("error ");
+            }
+
+        }).done(function () {
+            llenarTablaPeriodos();
+        });
+
+    }
+
+
+    $("#divPeriodos").on("click", ".btnEliminarPeriodo", function (event) {
+        event.stopPropagation();
+        var nombre = $(this).data('nombre');
+        eliminarPeriodo(nombre);
+    });
 
 });

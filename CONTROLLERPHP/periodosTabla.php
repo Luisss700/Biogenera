@@ -31,6 +31,7 @@
     <tr>
       <th scope="col">Nombre del Periodo</th>
       <th scope="col">Contraseña para el Periodo</th>
+	  <th scope="col">Eliminar</th>
 
     </tr>
   </thead>
@@ -42,10 +43,11 @@
 			$tupla = mysqli_fetch_array ($consulta);
 			$nombre = $tupla["Nombre"] ;
 			$contra = $tupla["Contrasena"];
-
+			
 			echo "<tr>";
-			echo '<th scope="col">'.$nombre.'</th>';
-			echo '<td scope="col">'.$contra.'</td>';
+			echo '<th scope="col">'.$nombre.'  </th>';
+			echo '<td scope="col" >'.$contra.'  </td>';
+			echo  "<td scope='col' class='btnEliminarPeriodo'>  <button type='button' class='btn btn-danger btnEliminarPeriodo' data-nombre='$nombre' >Eliminar</button> </td>";
 			echo "</tr>";
 
 		}
