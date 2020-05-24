@@ -106,13 +106,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item active" id="btnVoluntarios">
                <a class="nav-link waves-effect waves-light azul" > Voluntarios </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="btnEscuelas">
                 <a class="nav-link waves-effect waves-light azul" >Escuelas</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="btnPeriodos">
                 <a class="nav-link waves-effect waves-light azul" >Periodos</a>
             </li>
         </ul>
@@ -150,7 +150,21 @@
     //SOY ADMIN
     if (isset($_SESSION['sesionIniciada'])){
         if($_SESSION['sesionIniciada'] == 2){
-            require("VIEWS/admin.php");
+
+            if(isset($_POST["ruta"])){
+                 $ruta = $_POST["ruta"];
+                 if($ruta=="voluntarios"){
+                    require("VIEWS/voluntarios.php");
+                 }
+                 if($ruta=="escuelas"){
+                    require("VIEWS/escuelas.php");
+                 }
+                 if($ruta=="periodos"){
+                    require("VIEWS/periodos.php");
+                 }
+            }else{
+                 require("VIEWS/voluntarios.php");
+            }
         }
     }
 

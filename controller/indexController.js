@@ -13,6 +13,17 @@ $("document").ready(function () {
         postForm('index.php', { cerrarSesion: 'cerrarSesion' });
     });
 
+    $("#btnVoluntarios").click(function () {
+        postForm('index.php', { ruta: 'voluntarios' });
+    });
+
+    $("#btnEscuelas").click(function () {
+        postForm('index.php', { ruta: 'escuelas' });
+    });
+
+    $("#btnPeriodos").click(function () {
+        postForm('index.php', { ruta: 'periodos' });
+    });
 
 
 
