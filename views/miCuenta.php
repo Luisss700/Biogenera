@@ -8,7 +8,7 @@
     </head>
     <body style="background-color:#6bcabe">
     <script type ="text/javascript" src="CONTROLLER/miCuentaController.js"></script>
-<form>
+<form id="formHorario" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>"
 <div class="form-check">
   <div style="background-color:white">
     <table class="table">
@@ -33,35 +33,35 @@
         </tr>
         <tr>
             <th scope="row">7:30-8:00</th>
-            <td><input class="form-check-input" type="checkbox" value="2" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
+            <td><input class="form-check-input" type="checkbox" value="2" id="Lunes73"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Martes73"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Miercoles73"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Jueves73"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Viernes73"></td>
         </tr>
         <tr>
             <th scope="row">8:00-8:30</th>
-            <td><input class="form-check-input" type="checkbox" value="3" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
+            <td><input class="form-check-input" type="checkbox" value="3" id="Lunes8"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Martes8"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Miercoles8"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Jueves8"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Viernes8"></td>
         </tr>
         <tr>
             <th scope="row">8:30-9:00</th>
-            <td><input class="form-check-input" type="checkbox" value="4" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
+            <td><input class="form-check-input" type="checkbox" value="4" id="Lunes83"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Martes83"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Miercoles83"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Jueves83"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Viernes83"></td>
         </tr>
         <tr>
             <th scope="row">9:00-9:30</th>
-            <td><input class="form-check-input" type="checkbox" value="5" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
-            <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></td>
+            <td><input class="form-check-input" type="checkbox" value="5" id="Lunes9"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Martes9"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Miercoles9"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Jueves9"></td>
+            <td><input class="form-check-input" type="checkbox" value="" id="Viernes9"></td>
         </tr>
         <tr>
             <th scope="row">9:30-10:00</th>
