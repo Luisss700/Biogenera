@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
-<html> 
+<html LANG="en"> 
     <head> 
+    <meta charset="utf-8"/>
         <link href="./ASSETS/CSS/loginCSS.css" rel="stylesheet" />
         <title>Inicio de Sesión</title> 
     </head> 
@@ -11,7 +12,7 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Inicia Sesíon</h5>
+            <h5 class="card-title text-center">Inicia Sesión</h5>
             <form class="form-signin">
               
                 <input type="email" id="txtCorreo" class="form-control" placeholder="Correo" required >

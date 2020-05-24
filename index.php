@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html  LANG="es">
+<html  LANG="en">
 <head>
 <link href="ASSETS/Bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
 <meta charset="utf-8"/>
@@ -25,6 +25,12 @@
 
             $_SESSION['sesionIniciada']=1;
              $_SESSION['correo'] = $_POST['loginExito'];
+            
+        }
+        if(isset($_POST['admin'])){
+
+            $_SESSION['sesionIniciada']=2;
+             $_SESSION['correo'] = $_POST['admin'];
             
         }
         
@@ -80,7 +86,7 @@
             </li>
         </ul>
         <form class="form-inline">
-            <a  id="btnCerrarSesion" class="nav-link waves-effect waves-light" >Cerrar Sesion</a>
+            <a  id="btnCerrarSesion" class=" cerrarSesion" >Cerrar Sesion</a>
         </form>
     </div>
 </nav>
@@ -88,6 +94,38 @@
 <br>  
    
     <?php
+            }
+            if ($_SESSION['sesionIniciada']==2){
+             ?>
+
+             <nav class="navbar navbar-expand-lg  info-color" style="background-color:white">
+    <a class="navbar-brand mb-0 h1" href="Index.php" style="font-size:40px;padding-right:5em">
+                <img src="Assets/Imagenes/biogenera_logo.jpg" width="50" height="50" class="d-inline-block align-top" alt="" />Biogenera</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+               <a class="nav-link waves-effect waves-light azul" > Voluntarios </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-effect waves-light azul" >Escuelas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-effect waves-light azul" >Periodos</a>
+            </li>
+        </ul>
+        <form class="form-inline">
+            <a  id="btnCerrarSesion" class="nav-link waves-effect waves-light cerrarSesion" >Cerrar Sesion</a>
+        </form>
+    </div>
+</nav>
+       <br>
+<br>  
+
+
+             <?php
             }
         }
     ?>
@@ -100,13 +138,25 @@
             require("VIEWS/registro.php");
          }
     }else{
+
     if (isset($_SESSION['sesionIniciada'])){
-        require("VIEWS/miCuenta.php");
+        if($_SESSION['sesionIniciada']==1){
+                 require("VIEWS/miCuenta.php"); //No soy admin
+        }
     }else{
         require("VIEWS/login.php");
+    }      
     }
-       
+    //SOY ADMIN
+    if (isset($_SESSION['sesionIniciada'])){
+        if($_SESSION['sesionIniciada'] == 2){
+            require("VIEWS/admin.php");
+        }
     }
+
+
+
+
     ?>
 
 

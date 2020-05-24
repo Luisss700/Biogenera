@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
-<html> 
+<html LANG="en"> 
     <head> 
+    <meta charset="utf-8"/>
         <title>Mi Cuenta</title> 
     </head> 
     <body>  
@@ -10,7 +11,7 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-3" style="background-color:#ded5d5">
-                    <h1>HOLA1</h1>
+                    <h1>HOLA·1</h1>
                 </div>
                 <div class="col-md"></div>
                 <div class="col-md-3" style="background-color:#ded5d5">
@@ -28,7 +29,7 @@
         <br />
         <br />
         <div id="contenidoDinamico">
-            HOla
+            HOl··· ÛÛ
         </div>
     </body> 
 </html> 

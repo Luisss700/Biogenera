@@ -7,3 +7,15 @@
     color:blue !important;
 }
 
+.azul{
+    color:blue !important;
+}
+.azul:hover{
+    cursor: pointer;
+}
+.cerrarSesion{
+     color:blue !important;
+}
+.cerrarSesion:hover{
+    cursor: pointer;
+}

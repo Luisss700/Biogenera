@@ -1,11 +1,11 @@
 <!DOCTYPE html> 
-<html> 
+<html LANG="en"> 
     <head> 
-      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+      <meta charset="utf-8"/>
         <title>Registro</title> 
     </head> 
     <body>  
-       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+       
        <script type ="text/javascript" src="./CONTROLLER/registroController.js"></script>
 
 <div class="container">

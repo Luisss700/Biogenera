@@ -1,5 +1,7 @@
 ﻿$("document").ready(function () {
     $('#txtCorreo').focus();
+
+
     $("#btnLogin").click(function () {
 
         var correo = $("#txtCorreo").val();
@@ -24,6 +26,9 @@
                 }
                 if (data == "exito") {
                     postForm('index.php', { loginExito: correo });
+                }
+                if (data == "admin") {
+                    postForm('index.php', { admin: correo });
                 }
             },
             error: function () {
