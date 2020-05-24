@@ -16,6 +16,7 @@
     <?php 
         session_start();
         var_dump($_POST);
+
         if(isset($_POST['cerrarSesion'])){
 
             session_destroy();
