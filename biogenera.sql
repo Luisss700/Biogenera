@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2020 at 08:37 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.1.32
+-- Generation Time: May 24, 2020 at 11:05 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,6 +34,13 @@ CREATE TABLE `adminitrador` (
   `Contrasena` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `adminitrador`
+--
+
+INSERT INTO `adminitrador` (`IDadministrador`, `Correo`, `Contrasena`, `Nombre`) VALUES
+(1, 'lu1z3nr1k3@gmail.com', 'lollol', 'Luis');
 
 -- --------------------------------------------------------
 
@@ -150,6 +157,14 @@ CREATE TABLE `periodo` (
   `Contrasena` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `periodo`
+--
+
+INSERT INTO `periodo` (`IDperiodo`, `Nombre`, `Contrasena`) VALUES
+(43, 'OT15', '15'),
+(45, 'OT16', '4');
+
 -- --------------------------------------------------------
 
 --
@@ -178,14 +193,8 @@ CREATE TABLE `voluntario` (
 --
 
 INSERT INTO `voluntario` (`IDvoluntario`, `Nombre`, `Apellidos`, `IDperiodo`, `Matricula`, `Activado`, `Semestre`, `FechaN`, `Celular`, `Automovil`, `Correo`, `Contrasena`, `Sexo`, `Universidad`) VALUES
-(1, 'Luis', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
-(2, 'Luis', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
-(3, 'Enrique', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
-(4, 'Enrique', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
-(5, 'Sanchez', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
-(6, 'Sanchez', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
-(7, 'Solo', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', ''),
-(8, 'Solo', '', 1, 364210, 0, 8, '2017-06-15', '8182102111', 1, 'luisss700@hotmail.com', 'rtgrtg', '', '');
+(9, 'Luis', 'Sánchez', 0, 364210, 0, 8, '1998-08-03', '8182102111', 1, 'luisss700@hotmail.com', '$2y$10$SRUupi7j9xjIiymJJO034ebmKZCZ65WQolpPlDCJNRTNK1unpEBo2', 'hombre', ''),
+(10, 'wew', 'wefwef', 0, 3, 0, 3, '1998-08-03', '818210211', 1, 'luwied@hotmail.com', '$2y$10$Wwb0Fzp5ut/b0RpuSh16mOrfpAAwqh5YGZ7LSLrl47Mlihz1ercwW', 'hombre', '');
 
 --
 -- Indexes for dumped tables
@@ -222,6 +231,12 @@ ALTER TABLE `horario`
   ADD PRIMARY KEY (`IDhorario`);
 
 --
+-- Indexes for table `periodo`
+--
+ALTER TABLE `periodo`
+  ADD PRIMARY KEY (`IDperiodo`);
+
+--
 -- Indexes for table `voluntario`
 --
 ALTER TABLE `voluntario`
@@ -235,7 +250,7 @@ ALTER TABLE `voluntario`
 -- AUTO_INCREMENT for table `adminitrador`
 --
 ALTER TABLE `adminitrador`
-  MODIFY `IDadministrador` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDadministrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `equipo`
@@ -262,10 +277,16 @@ ALTER TABLE `horario`
   MODIFY `IDhorario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `periodo`
+--
+ALTER TABLE `periodo`
+  MODIFY `IDperiodo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
 -- AUTO_INCREMENT for table `voluntario`
 --
 ALTER TABLE `voluntario`
-  MODIFY `IDvoluntario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `IDvoluntario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
