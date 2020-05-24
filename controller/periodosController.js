@@ -34,10 +34,6 @@
 
 
 
-
-
-
-
     function agregarPeriodo(){
 
         var valores = {
@@ -86,7 +82,7 @@
 
     var myFunction = function () {
         var attribute = this.getAttribute("data-nombre");
-        alert(attribute);
+        //alert(attribute);
     };
 
     for (var i = 0; i < elements.length; i++) {

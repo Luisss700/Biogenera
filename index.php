@@ -17,6 +17,8 @@
         session_start();
         var_dump($_POST);
 
+        require('CONTROLLERPHP/conexion.php');
+
         if(isset($_POST['cerrarSesion'])){
 
             session_destroy();
@@ -116,6 +118,9 @@
             <li class="nav-item" id="btnPeriodos">
                 <a class="nav-link waves-effect waves-light azul" >Periodos</a>
             </li>
+             <li class="nav-item" id="btnRegistroEscuela">
+                <a class="nav-link waves-effect waves-light azul" >Registro Escuela</a>
+            </li>
         </ul>
         <form class="form-inline">
             <a  id="btnCerrarSesion" class="nav-link waves-effect waves-light cerrarSesion" >Cerrar Sesion</a>
@@ -162,6 +167,9 @@
                  }
                  if($ruta=="periodos"){
                     require("VIEWS/periodos.php");
+                 }
+                 if($ruta=="registroEscuela"){
+                     require("VIEWS/registroEscuela.php");
                  }
             }else{
                  require("VIEWS/voluntarios.php");

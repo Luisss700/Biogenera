@@ -67,14 +67,14 @@ if(isset($_POST['accion'])){
 		$consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
 		$nfilas = mysqli_num_rows ($consulta);
 
-        echo '<select class="browser-default custom-select">';
+        echo '<select class="browser-default custom-select btnEscuelaSelect">';
 
              for ($i=0; $i<$nfilas; $i++)
 		                         {
 			                        $tupla = mysqli_fetch_array ($consulta);
 			                        $nombre = $tupla["Nombre"];
                                     // <option value="1">One</option>
-                                    echo "  <option value = '$nombre' data-nombre='$nombre' >$nombre</option>  ";
+                                    echo "  <option  value = '$nombre' data-nombre='$nombre' >$nombre</option>  ";
 		                        }
         echo '</select>';
          

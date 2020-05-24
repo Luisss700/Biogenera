@@ -1,8 +1,8 @@
 ﻿$("document").ready(function () {
 
-    llenarSelectPeriodos();
-
-    function llenarSelectPeriodos() {
+   // llenarSelectPeriodos();
+    /*
+   function llenarSelectPeriodos() {
 
         var parametros = {
             "accion": "2",
@@ -25,5 +25,10 @@
 
 
     }
+
+   */
+
+
+
 
 });

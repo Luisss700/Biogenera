@@ -25,6 +25,11 @@ $("document").ready(function () {
         postForm('index.php', { ruta: 'periodos' });
     });
 
+    $("#btnRegistroEscuela").click(function () {
+        postForm('index.php', { ruta: 'registroEscuela' });
+    });
+
+
 
 
 
