@@ -14,6 +14,8 @@
     <meta name="viewport" content="wnameth=device-wnameth, initial-scale=1">
     </head>
     <body style="background-color:#6bcabe">
+          <h1 class="display-1 text-center">Inscripcion Horario</h1>
+          <br>
     <script type ="text/javascript" src="CONTROLLER/miCuentaController.js"></script>
 <form id="horarioRegistro" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
 <div class="form-check">
