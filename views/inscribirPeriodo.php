@@ -1,4 +1,7 @@
-
+<?php
+  if(isset($_POST['insertar']))
+  s{require("CONTROLLERPHP/inscribirPeriodoVoluntario.php");}
+ ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,6 +25,7 @@
                     <br>
                     <button class="btn btn-primary" id="btnAgregarPeriodo">Registrar</button>
                     <input type="hidden" name="ruta" value="inscribirPeriodo">
+                    <input type="hidden" name="insertar" value="insterate">
                   </div>
                 <div class="col-3"></div>
               </div>
