@@ -2,25 +2,25 @@
 <!DOCTYPE html>
 <html  LANG="en">
 <head>
-<link href="ASSETS/Bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
+<link href="ASSETS/Bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="ASSETS/CSS/indexCSS.css" rel="stylesheet" />
 </head>
 <body style="background-color:#6bcabe">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
-    <script type ="text/javascript" src="ASSETS/Bootstrap/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type ="text/javascript" src="ASSETS/Bootstrap/js/bootstrap.min.js"></script>
     <script type ="text/javascript" src="CONTROLLER/indexController.js"></script>
 
 
-    <?php 
+    <?php
         session_start();
         var_dump($_POST);
 
-         require('CONTROLLERPHP/conexion.php');     
+         require('CONTROLLERPHP/conexion.php');
 
         function setID(){
-        require('CONTROLLERPHP/conexion.php');     
+        require('CONTROLLERPHP/conexion.php');
             $correo = $_SESSION['correo'];
             $sql = "SELECT IDvoluntario FROM voluntario WHERE correo = '$correo'";
 		    $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
@@ -39,15 +39,15 @@
             $_SESSION['sesionIniciada']=1;
              $_SESSION['correo'] = $_POST['loginExito'];
              setID();
-            
+
         }
         if(isset($_POST['admin'])){
 
             $_SESSION['sesionIniciada']=2;
              $_SESSION['correo'] = $_POST['admin'];
-            
+
         }
-        
+
         if(isset($_POST['actionRegistro'])){
             $valores = array();
             $columnas = array("Nombre","Apellidos","Matricula","Semestre","FechaN","Celular","Automovil","Correo","Contrasena","Sexo");
@@ -65,8 +65,8 @@
             $_SESSION['sesionIniciada'] = 1;
             $_SESSION['correo'] = $_POST['correo'];
             setID();
-            
-            
+
+
         }
 
 
@@ -83,22 +83,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-               <a class="nav-link waves-effect waves-light"  id="btnMiCuenta">Mi Cuenta <span class="sr-only">(current)</span></a>
+               <a class="nav-link waves-effect waves-light"  id="btnMiCuenta" href="#">Mi Horario</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link waves-effect waves-light" href="#">Features</a>
+                <a class="nav-link waves-effect waves-light" id="btnInscribirPeriodo" href="#">Inscribir Periodo</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link waves-effect waves-light" href="#">Pricing</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink"               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item waves-effect waves-light" href="#">Action</a>
-                    <a class="dropdown-item waves-effect waves-light" href="#">Another action</a>
-                    <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>
-                </div>
-            </li>
+
         </ul>
         <form class="form-inline">
             <a  id="btnCerrarSesion" class=" cerrarSesion" >Cerrar Sesion</a>
@@ -106,8 +96,8 @@
     </div>
 </nav>
        <br>
-<br>  
-   
+<br>
+
     <?php
             }
             if ($_SESSION['sesionIniciada']==2){
@@ -140,7 +130,7 @@
     </div>
 </nav>
        <br>
-<br>  
+<br>
 
 
              <?php
@@ -155,6 +145,9 @@
         if($_POST["ruta"]=="registro"){
             require("VIEWS/registro.php");
          }
+         if($_POST["ruta"]=="inscribirPeriodo"){
+             require("VIEWS/inscribirPeriodo.php");
+         }
     }else{
 
     if (isset($_SESSION['sesionIniciada'])){
@@ -163,7 +156,7 @@
         }
     }else{
         require("VIEWS/login.php");
-    }      
+    }
     }
     //SOY ADMIN
     if (isset($_SESSION['sesionIniciada'])){
