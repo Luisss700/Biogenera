@@ -17,7 +17,17 @@
         session_start();
         var_dump($_POST);
 
-        require('CONTROLLERPHP/conexion.php');
+         require('CONTROLLERPHP/conexion.php');     
+
+        function setID(){
+        require('CONTROLLERPHP/conexion.php');     
+            $correo = $_SESSION['correo'];
+            $sql = "SELECT IDvoluntario FROM voluntario WHERE correo = '$correo'";
+		    $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
+		    $tupla = mysqli_fetch_array ($consulta);
+			$_SESSION['id'] = $tupla["IDvoluntario"];
+            echo "id = ".$_SESSION['id'];
+        }
 
         if(isset($_POST['cerrarSesion'])){
 
@@ -28,6 +38,7 @@
 
             $_SESSION['sesionIniciada']=1;
              $_SESSION['correo'] = $_POST['loginExito'];
+             setID();
             
         }
         if(isset($_POST['admin'])){
@@ -53,6 +64,7 @@
             $Insert->insertar($tabla,$columnas,$valores);
             $_SESSION['sesionIniciada'] = 1;
             $_SESSION['correo'] = $_POST['correo'];
+            setID();
             
             
         }
