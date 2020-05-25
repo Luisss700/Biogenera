@@ -30,7 +30,7 @@
                             <h5>Periodo</h5>
                             <?php 
 
-                                $sql = "SELECT Nombre FROM periodo";
+                                $sql = "SELECT * FROM periodo";
 		                        $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
 	                        	$nfilas = mysqli_num_rows ($consulta);
         
@@ -40,8 +40,9 @@
 		                                  {
 			                               $tupla = mysqli_fetch_array ($consulta);
 			                              $nombre = $tupla["Nombre"];
+                                          $id = $tupla["IDperiodo"];
                                               // <option value="1">One</option>
-                                              echo "  <option  value = '$nombre' data-nombre='$nombre' >$nombre</option>  ";
+                                              echo "  <option  value = '$id' data-nombre='$nombre' >$nombre</option>  ";
 		                                  }
                                 echo '</select>';
          
