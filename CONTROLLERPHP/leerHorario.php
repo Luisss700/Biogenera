@@ -10,7 +10,7 @@ for ($i=0; $i<100 ; $i++) {
   if ($tupla["IDhorario"]==$numero) {
     $_SESSION["h".($i+1)]=($i+1);
   }
-  $tupla = mysqli_fetch_array($consulta);
+  $tupla = mysqli_fetch_array($consulta); //haha
 
 }
 
