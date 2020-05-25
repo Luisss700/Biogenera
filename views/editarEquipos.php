@@ -333,6 +333,14 @@ if(isset($_POST['negativo']))
            </div>
        <?php } ?>
 
+       <?php
+       for ($i=0; $i<100; $i++) {
+         if (isset($_SESSION["h".($i+1)])) {
+                 unset($_SESSION["h".($i+1)]);
+         }
+       }
+        ?>
+
         </div>
         <div class="col-3"></div>
     </div>
