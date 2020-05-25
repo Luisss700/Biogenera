@@ -8,6 +8,9 @@ $("document").ready(function () {
     $("#btnEditarEquipos").click(function () {
         postForm('index.php', { ruta: 'editarEquipos' });
     });
+    $("#btnRegistroEquipo").click(function () {
+        postForm('index.php', { ruta: 'registroEquipo' });
+    });
 
     $("#btnInscribirPeriodo").click(function () {
         postForm('index.php', { ruta: 'inscribirPeriodo' });

@@ -10,35 +10,61 @@
           <br>
 <form id="horarioRegistro" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
 
+  <div class="container">
+     <div class="row">
+         <div class="col-3" ></div>
+         <div class="col-6">
 
-          <?php
-          if($_POST["Fase"]!=1)
-          {
-              $sql = "SELECT * FROM periodo";
-          $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
-          $nfilas = mysqli_num_rows ($consulta);
+           <?php
 
-              echo '<select id="selectPeriodo"class="browser-default custom-select btnEscuelaSelect">';
+               $sql = "SELECT * FROM periodo";
+           $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
+           $nfilas = mysqli_num_rows ($consulta);
 
-                    for ($i=0; $i<$nfilas; $i++)
-                    {
-                   $tupla = mysqli_fetch_array ($consulta);
-                  $nombre = $tupla["Nombre"];
-                        $id = $tupla["IDperiodo"];
-                            // <option value="1">One</option>
-                            echo "  <option  value = '$id' data-nombre='$nombre' >$nombre</option>  ";
-                    }
-              echo '</select>';
+               echo '<select name="periodo" id="selectPeriodo"class="browser-default custom-select btnEscuelaSelect">';
 
-              ?>
-              <button type="submit" class="btn btn-primary" name="selecionPeriodo"></button>
-              <input type="hidden" name="ruta" value="">
+                     for ($i=0; $i<$nfilas; $i++)
+                     {
+                    $tupla = mysqli_fetch_array ($consulta);
+                   $nombre = $tupla["Nombre"];
+                         $id = $tupla["IDperiodo"];
+                             // <option value="1">One</option>
+                             echo "  <option  value = '$id' data-nombre='$nombre' >$nombre</option>  ";
+                     }
+               echo '</select>';
+           ?>
+              <br>
+              <button type="submit" class="btn btn-primary" name="registroHorario">Seleccionar Periodo</button>
+              <input type="hidden" name="ruta" value="editarEquipos">
               <input type="hidden" name="Fase" value="1">
-            <?php }
-            if ($_POST["FASE"]!=2) {
+            <?php
+            if (@$_POST["FASE"]!=2) {
 
-            }
-             ?>
+        $sql = "SELECT * FROM equipo WHERE IDperiodo=$_POST['periodo']";
+        $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
+        $nfilas = mysqli_num_rows ($consulta);
+
+            echo '<select name="Equipo" id="selectEquipo"class="browser-default custom-select btnEscuelaSelect">';
+
+                  for ($i=0; $i<$nfilas; $i++)
+                  {
+                 $tupla = mysqli_fetch_array ($consulta);
+                      $id = $tupla["IDequipo"];
+                          // <option value="1">One</option>
+                          echo "  <option  value = '$id' data-nombre='$id' >$id</option>  ";
+                  }
+            echo '</select>';
+          }
+        ?>
+           <br>
+           <button type="submit" class="btn btn-primary" name="registroHorario">Seleccionar Periodo</button>
+           <input type="hidden" name="ruta" value="editarEquipos">
+           <input type="hidden" name="Fase" value="2">
+
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
 </form>
   </body>
 </html>
