@@ -39,8 +39,9 @@
               <input type="hidden" name="Fase" value="1">
             <?php
           }
-            if (@$_POST["FASE"]!=2&&isset($_POST["Fase"])) {
-              $sql = "SELECT * FROM equipo WHERE IDperiodo=$_POST[periodo]";
+            if (@$_POST["Fase"]!=2&&isset($_POST["Fase"])) {
+              $periodo=$_POST['periodo'];
+              $sql = "SELECT * FROM equipo WHERE IDperiodo=$periodo";
           $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
           $nfilas = mysqli_num_rows ($consulta);
 
@@ -60,7 +61,17 @@
              <input type="hidden" name="ruta" value="editarEquipos">
              <input type="hidden" name="Fase" value="2">
 
-           <?php } ?>
+           <?php }
+           if (@$_POST["Fase"]==2) {
+             $equipo=$_POST['equipo'];
+         $sql = "SELECT * FROM equipovoluntario WHERE IDequipo=$equipo";
+         $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
+         $nfilas = mysqli_num_rows ($consulta);
+
+
+
+           }
+           ?>
         </div>
         <div class="col-3"></div>
     </div>
