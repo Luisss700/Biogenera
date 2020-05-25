@@ -1,8 +1,12 @@
 ﻿
 $("document").ready(function () {
-   
+
     $("#btnMiCuenta").click(function () {
         postForm('index.php', { ruta: 'miCuenta' });
+    });
+
+    $("#btnInscribirPeriodo").click(function () {
+        postForm('index.php', { ruta: 'inscribirPeriodo' });
     });
 
     $("#btnRegistroRuta").click(function () {
@@ -59,4 +63,3 @@ $("document").ready(function () {
 
 
 });
-
