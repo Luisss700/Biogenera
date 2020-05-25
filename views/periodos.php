@@ -24,9 +24,8 @@
 
                 <h5> Lista de periodos </h5>
                 <div id="divPeriodos" style='background-color:white'>
-               
+                    
                 <div>
-
             </div>
             <div class="col-3" ></div>
         </div>
