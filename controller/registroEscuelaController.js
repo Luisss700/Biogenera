@@ -17,10 +17,6 @@
             var vCupo = $("#txtCupo").val();
             var vNombreContacto = $("#txtNombreContacto").val();
 
-            if (isNaN(vTurno) || vTurno.length < 1) {
-                alert("Ingresar un numero en el turno");
-                return false;
-            }
             if (isNaN(vCupo) || vCupo.length < 1) {
                 alert("Ingresar un numero en el cupo");
                 return false;
