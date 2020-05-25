@@ -31,7 +31,7 @@ if(isset($_POST['negativo']))
                $sql = "SELECT * FROM periodo";
            $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
            $nfilas = mysqli_num_rows ($consulta);
-
+              echo "<h4>Seleccione un periodo</h4>";
                echo '<select name="periodo" id="selectPeriodo"class="browser-default custom-select btnEscuelaSelect">';
 
                      for ($i=0; $i<$nfilas; $i++)
@@ -45,6 +45,7 @@ if(isset($_POST['negativo']))
                echo '</select>';
            ?>
               <br>
+              <br>
               <button type="submit" class="btn btn-primary" name="registroHorario">Seleccionar Periodo</button>
               <input type="hidden" name="ruta" value="editarEquipos">
               <input type="hidden" name="Fase" value="1">
@@ -55,7 +56,7 @@ if(isset($_POST['negativo']))
               $sql = "SELECT * FROM equipo WHERE IDperiodo=$periodo";
           $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
           $nfilas = mysqli_num_rows ($consulta);
-
+            echo "<h4>Seleccion un equipo existente dentro del periodo</h4>";
               echo '<select name="equipo" id="selectPeriodo"class="browser-default custom-select btnEscuelaSelect">';
 
                     for ($i=0; $i<$nfilas; $i++)
@@ -70,6 +71,7 @@ if(isset($_POST['negativo']))
 
           ?>
              <br>
+             <br>
              <button type="submit" class="btn btn-primary" name="registroHorario">Seleccionar Equipo</button>
              <input type="hidden" name="ruta" value="editarEquipos">
              <input type="hidden" name="Fase" value="2">
@@ -82,9 +84,9 @@ if(isset($_POST['negativo']))
          $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
          $nfilas = mysqli_num_rows ($consulta);
          ?>
+
+         <h4>De la lista porfavor elija quien agregar y a quien eliminar</h4>
          <div style="background-color:white">
-
-
          <table class="table">
            <thead>
              <tr>
