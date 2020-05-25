@@ -1,6 +1,16 @@
 <?php
   if(isset($_POST['insertar']))
-  s{require("CONTROLLERPHP/inscribirPeriodoVoluntario.php");}
+  {require("CONTROLLERPHP/inscribirPeriodoVoluntario.php");$impresion=0;
+    if($tupla["IDperiodo"]!=0)
+    {$impresion=323;}}
+  else {
+    $id=$_SESSION['id'];
+    $sql = "SELECT IDperiodo FROM voluntario WHERE IDvoluntario = '$id'";
+    $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
+    $tupla = mysqli_fetch_array($consulta);
+    if($tupla["IDperiodo"]!=0)
+    {$impresion=323;}
+  }
  ?>
 <!doctype html>
 <html lang="en">
@@ -19,17 +29,39 @@
               <div class="row">
                 <div class="col-3"></div>
                   <div class="col-6">
-                    <input class="form-control" type="text" placeholder="Nombre del periodo">
+                    <input class="form-control" type="text" name="nombre" placeholder="Nombre del periodo">
                     <br>
-                    <input class="form-control" type="text" placeholder="Contraseña del periodo">
+                    <input class="form-control" type="text" name="contra"placeholder="Contraseña del periodo">
                     <br>
                     <button class="btn btn-primary" id="btnAgregarPeriodo">Registrar</button>
                     <input type="hidden" name="ruta" value="inscribirPeriodo">
                     <input type="hidden" name="insertar" value="insterate">
+                    <br>
+                    <br>
+
+                    <?php
+                        if($impresion==323)
+                        {
+                          $identificador=$tupla['IDperiodo'];
+                          $sql = "SELECT Nombre FROM periodo WHERE IDperiodo = '$identificador'";
+                          $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
+                          $tupla = mysqli_fetch_array($consulta);
+                          ?>
+                        <h2>Mi periodo es:<h2>
+                          <br>
+
+                          <div id="divPeriodos" style="background-color:white; text-align: center;">
+                            <?php echo $tupla["Nombre"]; ?>
+                          </div>
+
+                        <?php }?>
                   </div>
                 <div class="col-3"></div>
+
               </div>
             </div>
           </form>
+
+
     </body>
   </html>
