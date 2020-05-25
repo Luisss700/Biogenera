@@ -5,6 +5,10 @@ $("document").ready(function () {
         postForm('index.php', { ruta: 'miCuenta' });
     });
 
+    $("#btnEditarEquipos").click(function () {
+        postForm('index.php', { ruta: 'editarEquipos' });
+    });
+
     $("#btnInscribirPeriodo").click(function () {
         postForm('index.php', { ruta: 'inscribirPeriodo' });
     });
@@ -31,10 +35,6 @@ $("document").ready(function () {
 
     $("#btnRegistroEscuela").click(function () {
         postForm('index.php', { ruta: 'registroEscuela' });
-    });
-
-    $("#btnRegistroEquipo").click(function () {
-        postForm('index.php', { ruta: 'registroEquipo' });
     });
 
 

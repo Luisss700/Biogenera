@@ -123,6 +123,9 @@
              <li class="nav-item" id="btnRegistroEscuela">
                 <a class="nav-link waves-effect waves-light azul" >Registro Escuela</a>
             </li>
+            <li class="nav-item" id="btnEditarEquipos">
+               <a class="nav-link waves-effect waves-light azul" >Editar Equipos</a>
+           </li>
              <li class="nav-item" id="btnRegistroEquipo">
                 <a class="nav-link waves-effect waves-light azul" >Registro de Equipo</a>
             </li>
@@ -179,8 +182,12 @@
                  if($ruta=="registroEscuela"){
                      require("VIEWS/registroEscuela.php");
                  }
+                 if($ruta=="editarEquipos"){
+                     require("VIEWS/editarEquipos.php");
+                 }
                   if($ruta=="registroEquipo"){
                      require("VIEWS/registrarEquipo.php");
+
                  }
             }else{
                  require("VIEWS/voluntarios.php");
