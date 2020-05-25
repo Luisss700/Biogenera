@@ -16,7 +16,7 @@
          <div class="col-6">
 
            <?php
-
+           if (!isset($_POST["Fase"])) {
                $sql = "SELECT * FROM periodo";
            $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
            $nfilas = mysqli_num_rows ($consulta);
@@ -38,29 +38,29 @@
               <input type="hidden" name="ruta" value="editarEquipos">
               <input type="hidden" name="Fase" value="1">
             <?php
-            if (@$_POST["FASE"]!=2) {
-
-        $sql = "SELECT * FROM equipo WHERE IDperiodo=$_POST['periodo']";
-        $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
-        $nfilas = mysqli_num_rows ($consulta);
-
-            echo '<select name="Equipo" id="selectEquipo"class="browser-default custom-select btnEscuelaSelect">';
-
-                  for ($i=0; $i<$nfilas; $i++)
-                  {
-                 $tupla = mysqli_fetch_array ($consulta);
-                      $id = $tupla["IDequipo"];
-                          // <option value="1">One</option>
-                          echo "  <option  value = '$id' data-nombre='$id' >$id</option>  ";
-                  }
-            echo '</select>';
           }
-        ?>
-           <br>
-           <button type="submit" class="btn btn-primary" name="registroHorario">Seleccionar Periodo</button>
-           <input type="hidden" name="ruta" value="editarEquipos">
-           <input type="hidden" name="Fase" value="2">
+            if (@$_POST["FASE"]!=2&&isset($_POST["Fase"])) {
+              $sql = "SELECT * FROM equipo WHERE IDperiodo=$_POST[periodo]";
+          $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
+          $nfilas = mysqli_num_rows ($consulta);
 
+              echo '<select name="equipo" id="selectPeriodo"class="browser-default custom-select btnEscuelaSelect">';
+
+                    for ($i=0; $i<$nfilas; $i++)
+                    {
+                   $tupla = mysqli_fetch_array ($consulta);
+                        $id = $tupla["IDequipo"];
+                            // <option value="1">One</option>
+                            echo "  <option  value = '$id' data-nombre='$id' >$id</option>  ";
+                    }
+              echo '</select>';
+          ?>
+             <br>
+             <button type="submit" class="btn btn-primary" name="registroHorario">Seleccionar Periodo</button>
+             <input type="hidden" name="ruta" value="editarEquipos">
+             <input type="hidden" name="Fase" value="2">
+
+           <?php } ?>
         </div>
         <div class="col-3"></div>
     </div>
