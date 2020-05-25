@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2020 at 06:19 PM
+-- Generation Time: May 25, 2020 at 06:48 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -61,12 +61,9 @@ CREATE TABLE `equipo` (
 --
 
 INSERT INTO `equipo` (`IDequipo`, `IDescuela`, `IDPeriodo`) VALUES
-(1, 1, 3),
-(2, 1, 3),
-(4, 2, 4),
-(5, 3, 0),
-(6, 3, 0),
-(7, 3, 0);
+(1, 6, 2),
+(4, 8, 2),
+(7, 7, 3);
 
 -- --------------------------------------------------------
 
@@ -89,6 +86,16 @@ CREATE TABLE `equipovoluntario` (
   `IDequipo` int(11) NOT NULL,
   `IDvoluntario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `equipovoluntario`
+--
+
+INSERT INTO `equipovoluntario` (`IDequipo`, `IDvoluntario`) VALUES
+(7, 11),
+(4, 10),
+(1, 8),
+(1, 9);
 
 -- --------------------------------------------------------
 
@@ -114,9 +121,9 @@ CREATE TABLE `escuela` (
 --
 
 INSERT INTO `escuela` (`IDescuela`, `Nombre`, `Turno`, `FechaVisita`, `Colaborador`, `Cupo`, `DiaConfirmado`, `NombreContacto`, `Contacto`, `IDperiodo`) VALUES
-(3, 'Primara la saye', '1', '2020-06-01', 'Pedro Sanchez', 23, '0000-00-00', 'Marta Juarez', '81828384', 0),
-(4, 'Primaria Nuevo Amanecer', '1', '0000-00-00', 'Pedro Sanchez', 10, '0000-00-00', ' Sofia Alvarez', '81925746', 0),
-(5, 'Primaria la Saye', '1', '2020-07-06', 'Pedro Sanchez', 23, '0000-00-00', 'Marta Juarez', '81828384 ', 0);
+(6, 'La Saye', '1', '0000-00-00', 'Pedro Luna', 25, '0000-00-00', 'Marta Juarez', '8182838485', 2),
+(7, 'La saye', '1', '2020-07-06', 'Pedro Luna', 25, '0000-00-00', 'Marta Juarez', '', 3),
+(8, 'Primaria Soledad', '1', '2020-05-29', 'Yanin Guitierez', 10, '0000-00-00', 'Sofia Rodriguez', '81839453', 2);
 
 -- --------------------------------------------------------
 
@@ -279,20 +286,77 @@ CREATE TABLE `horariovoluntario` (
 --
 
 INSERT INTO `horariovoluntario` (`IDhorario`, `IDvoluntario`) VALUES
-(31, 7),
-(32, 7),
-(36, 7),
-(37, 7),
-(41, 7),
-(42, 7),
-(46, 7),
-(47, 7),
-(51, 7),
-(52, 7),
-(56, 7),
-(57, 7),
-(61, 7),
-(62, 7);
+(31, 8),
+(32, 8),
+(33, 8),
+(36, 8),
+(37, 8),
+(38, 8),
+(41, 8),
+(42, 8),
+(43, 8),
+(46, 8),
+(47, 8),
+(48, 8),
+(51, 8),
+(52, 8),
+(53, 8),
+(56, 8),
+(57, 8),
+(58, 8),
+(61, 8),
+(62, 8),
+(63, 8),
+(1, 9),
+(2, 9),
+(3, 9),
+(4, 9),
+(5, 9),
+(6, 9),
+(7, 9),
+(8, 9),
+(9, 9),
+(10, 9),
+(5, 10),
+(10, 10),
+(15, 10),
+(20, 10),
+(25, 10),
+(30, 10),
+(35, 10),
+(40, 10),
+(45, 10),
+(50, 10),
+(55, 10),
+(60, 10),
+(65, 10),
+(70, 10),
+(75, 10),
+(80, 10),
+(85, 10),
+(90, 10),
+(95, 10),
+(100, 10),
+(3, 11),
+(8, 11),
+(13, 11),
+(18, 11),
+(23, 11),
+(28, 11),
+(33, 11),
+(38, 11),
+(43, 11),
+(48, 11),
+(53, 11),
+(58, 11),
+(63, 11),
+(68, 11),
+(73, 11),
+(78, 11),
+(83, 11),
+(88, 11),
+(93, 11),
+(98, 11);
 
 -- --------------------------------------------------------
 
@@ -305,6 +369,15 @@ CREATE TABLE `periodo` (
   `Nombre` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Contrasena` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `periodo`
+--
+
+INSERT INTO `periodo` (`IDperiodo`, `Nombre`, `Contrasena`) VALUES
+(2, 'Prim2020', 'abeja'),
+(3, 'Ver2020', 'calor'),
+(4, 'OT2020', 'Naranja');
 
 -- --------------------------------------------------------
 
@@ -334,7 +407,10 @@ CREATE TABLE `voluntario` (
 --
 
 INSERT INTO `voluntario` (`IDvoluntario`, `Nombre`, `Apellidos`, `IDperiodo`, `Matricula`, `Activado`, `Semestre`, `FechaN`, `Celular`, `Automovil`, `Correo`, `Contrasena`, `Sexo`, `Universidad`) VALUES
-(7, 'Lopez', 'Gatel', 0, 123231, 0, 9, '1979-05-09', '81293746', 0, 'Lopez@gmail.com', '$2y$10$Zbv.72brEGFivYqHZZ8bJu95TFg6UziJrBpf16Q9MkHQ8ceY3XtMe', 'hombre', '');
+(8, 'Lopez', 'Gatel', 2, 293456, 0, 9, '1971-05-04', '81923456', 1, 'Lopez@gmail.com', '$2y$10$69gtw86XMx93A9XA5uD6y.xhDqw7F7KIABKlvIPBx5SvotVjgseES', 'hombre', ''),
+(9, 'Kevin', 'Luna', 2, 324568, 0, 7, '1999-04-27', '814657638', 1, 'Kevin@gmail.com', '$2y$10$oMQ.ns1Jpu.J8wf16UCWmuP3/n995VvJpB0Nm8CZmxJ.RjRDKUBau', 'hombre', ''),
+(10, 'Sara', 'Sofia', 2, 324586, 0, 7, '1999-05-04', '81345673', 1, 'Sara@gmail.com', '$2y$10$UZHAoOFb7rxAxi79YIX34OLO6wRFQFMD/I94W7inMwit6V9gQ0yYG', 'mujer', ''),
+(11, 'Voluntario', 'lollol', 3, 123234, 0, 1, '1993-05-05', '11111111', 1, 'Voluntario@gmail.com', '$2y$10$gyGnwhZN5I27bSGPuOe8H.zPwNJsfk54kSE/sic6qZceWYm.qoVza', 'hombre', '');
 
 --
 -- Indexes for dumped tables
@@ -396,13 +472,13 @@ ALTER TABLE `adminitrador`
 -- AUTO_INCREMENT for table `equipo`
 --
 ALTER TABLE `equipo`
-  MODIFY `IDequipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `IDequipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `escuela`
 --
 ALTER TABLE `escuela`
-  MODIFY `IDescuela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `IDescuela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `estudiante`
@@ -420,13 +496,13 @@ ALTER TABLE `horario`
 -- AUTO_INCREMENT for table `periodo`
 --
 ALTER TABLE `periodo`
-  MODIFY `IDperiodo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IDperiodo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `voluntario`
 --
 ALTER TABLE `voluntario`
-  MODIFY `IDvoluntario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `IDvoluntario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
