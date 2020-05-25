@@ -1,3 +1,10 @@
+<?php
+if(isset($_POST['registrarEquipo']))
+{
+    require ("CONTROLLERPHP/insertarEquipo.php");
+}
+
+ ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -55,23 +62,53 @@
                             echo "  <option  value = '$id' data-nombre='$id' >$id</option>  ";
                     }
               echo '</select>';
+
           ?>
              <br>
-             <button type="submit" class="btn btn-primary" name="registroHorario">Seleccionar Periodo</button>
+             <button type="submit" class="btn btn-primary" name="registroHorario">Seleccionar Equipo</button>
              <input type="hidden" name="ruta" value="editarEquipos">
              <input type="hidden" name="Fase" value="2">
 
            <?php }
            if (@$_POST["Fase"]==2) {
-             $equipo=$_POST['equipo'];
-         $sql = "SELECT * FROM equipovoluntario WHERE IDequipo=$equipo";
+         @$equipo=$_POST['equipo'];
+         @$periodo=$_POST['periodo'];
+         $sql = "SELECT * FROM voluntario WHERE IDvoluntario NOT IN(SELECT IDvoluntario FROM equipovoluntario) ";
          $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
          $nfilas = mysqli_num_rows ($consulta);
+         ?>
+         <div style="background-color:white">
 
 
+         <table class="table">
+           <thead>
+             <tr>
+               <th scope="col">Nombre</th>
+               <th scope="col">Agregar</th>
+             </tr>
+           </thead>
+          <tbody>
+            <?php
+            for ($i=0; $i<$nfilas; $i++) {
+            $tupla = mysqli_fetch_array($consulta);
+            echo "<tr>";
+            echo  "<td>".$tupla['Nombre']."</td>";
+            echo  "<td><button type='submit' class='btn btn-primary' name='registrarEquipo' value='".$tupla['IDvoluntario']."'>Agregar</button></td>";
+            echo "</tr>";
+            echo "<input type='hidden' name='periodo' value='".@$periodo."'>";
+            echo "<input type='hidden' name='equipo' value='".@$equipo."'>";
+          }
+            ?>
+          </tbody>
 
-           }
-           ?>
+         </table>
+        </div>
+        <input type="hidden" name="ruta" value="editarEquipos">
+        <input type="hidden" name="Fase" value="2">
+
+       <?php } ?>
+
+
         </div>
         <div class="col-3"></div>
     </div>
