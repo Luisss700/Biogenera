@@ -3,7 +3,7 @@
     <head> 
     <meta charset="utf-8"/>
         <link href="./ASSETS/CSS/loginCSS.css" rel="stylesheet" />
-        <title>Periodoss</title> 
+        <title>Periodos</title> 
     </head> 
     <body>  
     <script type ="text/javascript" src="./CONTROLLER/periodosController.js"></script>

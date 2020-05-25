@@ -88,6 +88,9 @@
             <li class="nav-item">
                 <a class="nav-link waves-effect waves-light" id="btnInscribirPeriodo" href="#">Inscribir Periodo</a>
             </li>
+                        <li class="nav-item" id="btnMiEquipo">
+                <a class="nav-link waves-effect waves-light azul" >Mi Equipo</a>
+            </li>
 
         </ul>
         <form class="form-inline">
@@ -154,6 +157,9 @@
          if($_POST["ruta"]=="inscribirPeriodo"){
              require("VIEWS/inscribirPeriodo.php");
          }
+        if($_POST["ruta"]=="miEquipo"){
+              require("VIEWS/miEquipo.php");
+         }
     }else{
 
     if (isset($_SESSION['sesionIniciada'])){
@@ -187,7 +193,6 @@
                  }
                   if($ruta=="registroEquipo"){
                      require("VIEWS/registrarEquipo.php");
-
                  }
             }else{
                  require("VIEWS/voluntarios.php");

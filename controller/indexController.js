@@ -40,6 +40,10 @@ $("document").ready(function () {
         postForm('index.php', { ruta: 'registroEscuela' });
     });
 
+    $("#btnMiEquipo").click(function () {
+        postForm('index.php', { ruta: 'miEquipo' });
+    });
+
 
 
 
