@@ -1,15 +1,15 @@
-<!DOCTYPE html> 
-<html LANG="en"> 
-    <head> 
-      <meta charset="utf-8"/>
-        <title>Registro</title> 
-    </head> 
-    <body>  
-       
+<!DOCTYPE html>
+<html LANG="en">
+    <head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <title>Registro</title>
+    </head>
+    <body>
+
        <script type ="text/javascript" src="./CONTROLLER/registroController.js"></script>
 
 <div class="container">
-<br> 
+<br>
 <hr>
 
 
@@ -17,14 +17,14 @@
 <div class="col-md-6">
 <div class="card">
 <header class="card-header">
-	<a href="" class="float-right btn btn-outline-primary mt-1">Inicia Sesión</a>
+	<a href="" class="float-right btn btn-outline-primary mt-1">Inicia Sesiï¿½n</a>
 	<h4 class="card-title mt-2">Resgistro</h4>
 </header>
 <article class="card-body">
 <form id="formaRegistro" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
 	<div class="form-row">
 		<div class="col form-group">
-			<label>Nombre</label>   
+			<label>Nombre</label>
 		  	<input type="text"  minlength="3" name="nombre" class="form-control" placeholder="" required>
 		</div> <!-- form-group end.// -->
 		<div class="col form-group">
@@ -36,12 +36,12 @@
         <label>Fecha de Nacimiento</label>
 		<input type="date" class="form-control" name="fechaN" placeholder="" required>
         <br>
-        <label>Número de Celular</label>
+        <label>Nï¿½mero de Celular</label>
 		<input type="text" class="form-control" name="celular" placeholder="" required>
         <br>
-		<label>Correo Electrónico</label>
+		<label>Correo Electrï¿½nico</label>
 		<input type="email" id="txtCorreo" class="form-control" name="correo" placeholder="" required>
-		<small class="form-text text-muted">No compartiremos tu correo con nadie más.</small>
+		<small class="form-text text-muted">No compartiremos tu correo con nadie mï¿½s.</small>
 	</div> <!-- form-group end.// -->
 	<div class="form-group">
 			<label class="form-check form-check-inline">
@@ -54,10 +54,10 @@
 		</label>
 	</div> <!-- form-group end.// -->
 
-    <div class="form-group"> 
+    <div class="form-group">
         <div class="form-row">
 		<div class="col form-group">
-			<label>Universidad</label>   
+			<label>Universidad</label>
 		  	<input type="text"  minlength="3" name="universidad" class="form-control" placeholder="" required>
 		</div> <!-- form-group end.// -->
 		<div class="col form-group">
@@ -67,35 +67,35 @@
         <div class="col form-group">
 			<label>Semestre</label>
 		  	<input type="number"  name ="semestre" class="form-control" placeholder=" " required>
-		</div> 
+		</div>
  <!-- form-group end.// -->
 	</div> <!-- form-row end.// -->
     </div>
 	<div class="form-group">
-        <label>¿Cuentas con automovil propio?</label>
+        <label>ï¿½Cuentas con automovil propio?</label>
 	    <input class="form-control" type="checkbox" name="automovil">
-        <br> 
         <br>
-		<label>Crear contraseña</label>
+        <br>
+		<label>Crear contraseï¿½a</label>
 	    <input class="form-control" type="password" name="contrasena" minlength="6" id="txtContrasena" required>
-        <label>Verificar contraseña</label>
+        <label>Verificar contraseï¿½a</label>
 	    <input class="form-control" type="password" id="txtContrasena2" id="txtContrasena2" required>
         <input  type="hidden" id="actionRegistro" name="actionRegistro" value = "1">
-	</div> <!-- form-group end.// -->  
+	</div> <!-- form-group end.// -->
     <div class="form-group">
         <div  class="btn btn-primary btn-block" id="btnRegistrate"> Registrate  </div>
         <button type="submit" id= "hiddenRegistro" style="visibility: hidden;" > Registrate  </button>
-    </div> <!-- form-group// -->                                               
+    </div> <!-- form-group// -->
 </form>
 </article> <!-- card-body end .// -->
-<div class="border-top card-body text-center"> ¿Ya tienes cuenta? <a href="">Inicia Sesión</a></div>
+<div class="border-top card-body text-center"> ï¿½Ya tienes cuenta? <a href="">Inicia Sesiï¿½n</a></div>
 </div> <!-- card.// -->
 </div> <!-- col.//-->
 
 </div> <!-- row.//-->
 
 
-</div> 
+</div>
 <!--container end.//-->
-    </body> 
-</html> 
+    </body>
+</html>
