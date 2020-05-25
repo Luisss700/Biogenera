@@ -47,7 +47,7 @@
                           <br>
 
                           <div id="divPeriodos" style="background-color:white; text-align: center;">
-                            <?php echo $tupla["Nombre"]; ?>
+                            <?php echo @$tupla["Nombre"]; ?>
                           </div>
 
 

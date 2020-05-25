@@ -12,7 +12,7 @@ require('CONTROLLERPHP/conexion.php');
     $sql2 = "SELECT IDperiodo FROM periodo WHERE Nombre = '$periodo' AND Contrasena='$contra'";
     $consulta2 = mysqli_query ($conexion,$sql2) or die ("Fallo en la consulta ".$sql2);
     $tupla2 = mysqli_fetch_array($consulta2);
-    $identificador=$tupla2['IDperiodo'];
+    @$identificador=$tupla2['IDperiodo'];
 
     if($tupla['IDperiodo']==0&&isset($tupla2['IDperiodo']))
     {
