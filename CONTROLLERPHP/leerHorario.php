@@ -7,7 +7,7 @@ require('CONTROLLERPHP/conexion.php');
 for ($i=0; $i<100 ; $i++) {
 
   $numero=strval( $i+1);
-  if ($tupla["IDhorario"]==$numero) {
+  if (@$tupla["IDhorario"]==@$numero) {
     $_SESSION["h".($i+1)]=($i+1);
   }
   $tupla = mysqli_fetch_array($consulta); //haha
