@@ -1,16 +1,13 @@
 <?php
   if(isset($_POST['insertar']))
-  {require("CONTROLLERPHP/inscribirPeriodoVoluntario.php");$impresion=0;
-    if($tupla["IDperiodo"]!=0)
-    {$impresion=323;}}
+  {require("CONTROLLERPHP/inscribirPeriodoVoluntario.php");$impresion=0;}
   else {
     $id=$_SESSION['id'];
     $sql = "SELECT IDperiodo FROM voluntario WHERE IDvoluntario = '$id'";
     $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
     $tupla = mysqli_fetch_array($consulta);
-    if($tupla["IDperiodo"]!=0)
-    {$impresion=323;}
-  }
+}
+  
  ?>
 <!doctype html>
 <html lang="en">
@@ -40,8 +37,7 @@
                     <br>
 
                     <?php
-                        if($impresion==323)
-                        {
+
                           $identificador=$tupla['IDperiodo'];
                           $sql = "SELECT Nombre FROM periodo WHERE IDperiodo = '$identificador'";
                           $consulta = mysqli_query ($conexion,$sql) or die ("Fallo en la consulta ".$sql);
@@ -54,7 +50,7 @@
                             <?php echo $tupla["Nombre"]; ?>
                           </div>
 
-                        <?php }?>
+
                   </div>
                 <div class="col-3"></div>
 
