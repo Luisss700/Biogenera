@@ -28,11 +28,28 @@
     }
 
     $("#btnAgregarPeriodo").click(function () {
-        agregarPeriodo();
+        if(validarPeriodo()){
+            agregarPeriodo();
+        }
     });
 
+    function validarPeriodo(){
+        var r = true;
 
+        var vPeriodo = $("#txtNombrePeriodo").val();
+        var vContra = $("#txtContrasenaPeriodo").val();
+        
+        if (vPeriodo.length < 2) {
+            alert("Periodo debe de tener minimo 2 caracteres");
+            return false;
+        }
+        if (vContra.length < 4) {
+            alert("Contraseña debe de tener minimo 4 caracteres");
+            return false;
+        }
 
+        return r;
+    }
 
     function agregarPeriodo(){
 
@@ -49,6 +66,7 @@
             "columna": "Nombre",
             "valor": $("#txtNombrePeriodo").val()
         }
+
         var parametros = {
             "insertar": "1",
             "valores": JSON.stringify(valores),

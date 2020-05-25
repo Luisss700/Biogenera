@@ -1,7 +1,7 @@
 ﻿$("document").ready(function () {
 
     $("#btnRegistrate").click(function () {
-
+        
         var error = false;
         var correo = $("#txtCorreo").val();
         var contra = $("#txtContrasena").val();
@@ -43,5 +43,11 @@
             }
         }
     });
+
+
+    //#region validar
+
+
+    //#endregion
 
 });
